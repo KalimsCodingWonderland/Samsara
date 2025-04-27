@@ -1,3 +1,5 @@
+# ROOT/EXAMPLES/SEARCHAGENT/SRC/SAMSARA/PROVIDERS/SEARCHPROVIDER.PY
+
 from tavily import AsyncTavilyClient
 
 class SearchProvider:
@@ -13,4 +15,9 @@ class SearchProvider:
             query: str
     ) -> dict:
         results = await self.client.search(query)
+        return results
+
+    async def extract(self, urls: list[str]) -> dict:
+        """NEW: Actually extract raw content from the given URLs."""
+        results = await self.client.extract(urls=urls, include_images=False)
         return results
