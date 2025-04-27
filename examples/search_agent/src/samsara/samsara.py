@@ -146,12 +146,12 @@ class SamsaraAgent(AbstractAgent):
         # 0) onboarding --------------------------------------------------
         if len(history) == 1 and not looks_like_period(query.prompt):
             greet = (
-                "👋 Hey, I’m **Samsara** – think of me as time-travel therapy.\n\n"
+                "👋 Hey, I’m Samsara – I become you at any point in your life.\n\n"
                 "Tell me the point in your life you want me to become. For example:\n"
-                " • first day of high school after moving\n"
+                " • First day of high school after moving\n"
                 " • when I’m 30 and living in Tokyo\n"
                 " • 2018-06-05\n\n"
-                "I’ll chat as *that you* until you say otherwise."
+                "I’ll chat as that 👀 you until you say otherwise."
             )
             stream = rh.create_text_stream("FINAL_RESPONSE")
             await stream.emit_chunk(greet)
