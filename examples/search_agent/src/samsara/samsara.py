@@ -211,26 +211,15 @@ class SamsaraAgent(AbstractAgent):
 
 
 # ─────────────────────────── FastAPI glue ────────────────────────────
-agent = SamsaraAgent()
-server = DefaultServer(agent)
-
-# CORS
-server._app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-# health‐check so "/" won’t 404
-@server._app.get("/")
-async def health_check():
-    return {"status": "ok"}
-
-# expose the internal FastAPI app for Uvicorn
-app = server._app
-
 if __name__ == "__main__":
-    import os
-    port = int(os.getenv("PORT", 8000))
-    server.run(host="0.0.0.0", port=port)
+    agent = SamsaraAgent()
+    server = DefaultServer(agent)
+
+    server._app.add_middleware(
+        CORSMiddleware,
+        allow_origins=["*"],
+        allow_methods=["*"],
+        allow_headers=["*"],
+    )
+
+    server.run()
