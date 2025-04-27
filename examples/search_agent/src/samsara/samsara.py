@@ -149,8 +149,8 @@ class SamsaraAgent(AbstractAgent):
                 "👋 Hey, I’m Samsara – I become you at any point in your life.\n\n"
                 "Tell me the point in your life you want me to become. For example:\n"
                 " • First day of high school after moving\n"
-                " • when I’m 30 and living in Tokyo\n"
-                " • 2018-06-05\n\n"
+                " • When I’m 30 and living in Tokyo\n"
+                " • A specific date you remember vividly\n\n"
                 "I’ll chat as that version of you until you say otherwise. 👀"
             )
             stream = rh.create_text_stream("FINAL_RESPONSE")
