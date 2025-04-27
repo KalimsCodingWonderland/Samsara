@@ -1,0 +1,25 @@
+# Ignore PyCharm files
+.idea/
+*.iml
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environments
+venv/
+env/
+
+# Ignore system files
+AppData/
+*.log
+*.tmp
+
+# Ignore git files
+.git/
+.gitignore
+
+# Misc
+*.DS_Store
